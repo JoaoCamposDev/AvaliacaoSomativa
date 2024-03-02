@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', 'sans-serrif';
+}
+
+body {
+    background-color: rgb(209, 232, 253);
+}
+
+body #txt1{
+    display: flex;
+    padding-top: 25px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+body #txt1 h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+body #txt1 p {
+    margin-bottom: 10px;
+}
+
+body #btns button{
+    margin-right: 20px;
+    color: white;
+    background-color: rgba(8, 78, 176, 0.784);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 300ms ease-in-out;
+    -webkit-transition: all 0.1 ease-in-out;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+body #btns button:hover {
+    cursor: pointer;
+    background-color: rgba(8, 61, 113, 0.927);
+    box-shadow: 1px 1px rgb(15, 53, 136);
+    transform: translateY(-2px);
+}
+
+body #btns button::after {
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px solid gray;
+}
+
+body #btns button:active {
+    transform: translateY(3px);
+    background-color: rgba(14, 56, 97, 0.927);
+}
+
+.info_aluno {
+    margin: 20px 10px 10px 0px;
+    width:9%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    border: 2px solid;
+    border-color: #94c9e169;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    text-align: center;
+    box-shadow: 1px 2px 2px rgba(197, 191, 191, 0.269);
+}
+
+.conteiner_infoAluno {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.conteiner_infoAluno.show {
+    opacity: 2;
+}
+
+
+input.situacao-aprovado {
+    border: 2px solid rgb(26, 189, 26);
+    background-color: rgba(30, 238, 37, 0.319);
+}
+
+input.situacao-recuperacao {
+    border: 2px solid rgb(255, 208, 0);
+    background-color: rgba(236, 252, 6, 0.362);
+}
+
+input.situacao-reprovado {
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.333);
+}
+
+input:focus {
+    box-shadow: 0 0 0 0;
+    outline: none;
+    border-color: rgba(10, 103, 241, 0.509);
+    transform: translateY(-2px);
+}
+
+.input-invalid {
+    border: 2px solid red;
+}
+
+input[type=number] {
+    width: 6%;
+}
+
+#divResultado {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.707);
+    width: 50%;
+    padding: 20px;
+    border: none;
+    border: 2px solid rgba(78, 65, 65, 0.151);
+    text-align: left;
+    box-shadow: 1px 2px 2px rgba(197, 191, 191, 0.269);
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#divResultado.mostrar {
+    opacity: 1;
+}
+
+#divResultado h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.fechar {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 4px 8px 4px 8px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 95%;
+}
+
+.fechar:hover {
+    background-color: rgb(191, 19, 19);
+    transform: translateY(-1px);
+}
+
+.fechar:active {
+    transform: translateY(2px);
+}
+
+/* Responsividade */
+
+@media (max-width: 480px) {
+
+    .conteiner_infoAluno.show {
+        margin-bottom: 30px;
+        background-color: rgba(96, 148, 222, 0.203);
+        width: 100%;
+    }
+
+    body #adcaluno{
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 10px
+    }
+
+    body #verificarAluno {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    body #verificarTurma {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    input[type="text"] {
+        width: 83%;
+        margin-left:5%;
+        font-size: 14px;
+    }
+
+    body #txt1 h1 {
+        font-size: 30px;
+    }
+
+    body #txt1 p {
+        font-size: 14px;
+    }
+
+    #nota1 {
+        width: 14%;
+        margin-left: 20px;
+        font-size: 10px;
+    }
+    #nota2 {
+        width: 14%;
+        font-size: 10px;
+        margin-right: 10px;
+    }
+    #nota3 {
+        width: 14%;
+        font-size: 10px;
+    }
+    #nota4 {
+        font-size: 10px;
+        width: 14%;
+    }
+
+    #mediaAluno {
+        margin-left: 18px;
+        font-size: 10px;
+        width: 18%;
+    }
+
+    #situacaoAluno {
+        width: 55%;
+        font-size: 12px;
+    }
+
+    #divResultado {
+        width: 80%;
+        font-size: 10px;
+    }
+
+
+}
+
